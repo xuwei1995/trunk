@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>弈客围棋后台管理</title>
+    <head th:include="fragments/header :: header" />
+    <style type="text/css">
+        .btnmr{
+            margin-right: 20px;
+        }
+        hr {
+            margin-top: 20px;
+            margin-bottom: 0px;
+            border: 0;
+            border-top: 2px solid #eee;
+        }
+        .sf-hr{
+            margin-top: 0px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 2px solid #67bde8;
+        }
+    </style>
+</head>
+<body id="skb" class="hold-transition skin-black-light sidebar-mini">
+<div class="wrapper">
+    <header class="main-header" th:include="fragments/index_top :: index_top" />
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" th:include="fragments/index_left_menu :: index_left_menu" />
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!--<div class="Container" style="width: 100%;">
+            <div class="ToolBar">
+                <div>
+                    <span class="Tools11"></span> <a
+                        style="margin-left: 12px; width: 55px;">GG</a>
+                </div>
+                <div>
+                    <span class="Tools10"></span> <a
+                        style="margin-left: 12px; width: 55px;">FF</a>
+                </div>
+                <div>
+                    <span class="Tools9"></span> <a
+                        style="margin-left: 12px; width: 55px;">DD</a>
+                </div>
+                <div>
+                    <span class="Tools8"></span> <a
+                        style="margin-left: 12px; width: 55px;">SS</a>
+                </div>
+                <div>
+                    <span class="Tools7"></span> <a
+                        style="margin-left: 12px; width: 55px;">AA</a>
+                </div>
+                <div>
+                    <span class="Tools12"></span> <a
+                        style="margin-left: 12px; width: 55px;">ZZ</a>
+                </div>
+                <div>
+                    <span class="Tools13"></span> <a
+                        style="margin-left: 12px; width: 55px;">XX</a>
+                </div>
+            </div>
+            <div class="CTitle">
+                <div class="tags1_left tags1_left_on"></div>
+                <div class="tagsM tagsM_on">学生管理</div>
+                <div class="tags tags3_r_on"></div>
+            </div>
+            <div id="rightContentC" class="Container-1" style="height: 100%; width: 100%">
+
+            </div>
+        </div>-->
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>教师管理<small>教师列表</small></h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
+                <li><a href="#">教师管理</a></li>
+                <li class="active">教师列表</li>
+            </ol>
+        </section>
+        <hr/>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div><!-- class="box"-->
+                        <div class="box-header">
+                            <form id="searchForm">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <label class="col-xs-3"><span>所属机构</span></label>
+                                        <div class="col-xs-8">
+                                            <select class="form-control" maxlength="100">
+                                                <option value="">请选择</option>
+                                                <option>复华教育</option>
+                                                <option>复旦教育</option>
+                                                <option>心雨教育</option>
+                                                <option>托福教育</option>
+                                                <option>雅思教育</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <label class="col-xs-3"><span>所属学校</span></label>
+                                        <div class="col-xs-8">
+                                            <select class="form-control" maxlength="100">
+                                                <option value="">请选择</option>
+                                                <option>学校一号</option>
+                                                <option>学校二号</option>
+                                                <option>学校三号</option>
+                                                <option>学校四号</option>
+                                                <option>学校五号</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <label class="col-xs-3"><span>教师姓名</span></label>
+                                        <div class="col-xs-8">
+                                            <input class="form-control" type="text" maxlength="100" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <label class="col-xs-3"><span>用户账号</span></label>
+                                        <div class="col-xs-8">
+                                            <input class="form-control" type="text" maxlength="100" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <label class="col-xs-3"><span>手机号码</span></label>
+                                        <div class="col-xs-8">
+                                            <input class="form-control" type="text" maxlength="100" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <label class="col-xs-3"><span>可用</span></label>
+                                        <div class="col-xs-8">
+                                            <div class="radioAlign">
+                                                <input type="radio" checked="checked"/><slabel>是</slabel>
+                                                <input type="radio"/><label>否</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="col-xs-11" style="text-align: right">
+                                            <button type="button" class="btn btn-primary btnmr">查询</button>
+                                            <button type="button" class="btn btn-info btnmr"><a th:href="@{teacherCreate}"  style="color: #fff">新增</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <table id="table" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th>账号</th>
+                                    <th>姓名</th>
+                                    <th>段位</th>
+                                    <th>手机号码</th>
+                                    <th>可用</th>
+                                    <td>创建人</td>
+                                    <td>创建时间</td>
+                                    <th>操作 </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>0001</td>
+                                    <td>刘亦菲</td>
+                                    <td>12K</td>
+                                    <td>15537839571</td>
+                                    <td>是</td>
+                                    <td>刘亦菲</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0002</td>
+                                    <td>朱茵</td>
+                                    <td>11K</td>
+                                    <td>15537839572</td>
+                                    <td>是</td>
+                                    <td>朱茵</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0003</td>
+                                    <td>丁玲珑</td>
+                                    <td>10K</td>
+                                    <td>15537839573</td>
+                                    <td>是</td>
+                                    <td>丁玲珑</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0004</td>
+                                    <td>刘若英</td>
+                                    <td>12K</td>
+                                    <td>15537839574</td>
+                                    <td>是</td>
+                                    <td>刘若英</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0005</td>
+                                    <td>林徽因</td>
+                                    <td>12K</td>
+                                    <td>15537839575</td>
+                                    <td>是</td>
+                                    <td>林徽因</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0006</td>
+                                    <td>林青霞</td>
+                                    <td>11K</td>
+                                    <td>15537839576</td>
+                                    <td>是</td>
+                                    <td>林青霞</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0007</td>
+                                    <td>唐艺昕</td>
+                                    <td>12K</td>
+                                    <td>15537839577</td>
+                                    <td>是</td>
+                                    <td>唐艺昕</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0008</td>
+                                    <td>赵丽颖</td>
+                                    <td>10K</td>
+                                    <td>15537839578</td>
+                                    <td>是</td>
+                                    <td>赵丽颖</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0007</td>
+                                    <td>唐艺昕</td>
+                                    <td>12K</td>
+                                    <td>15537839577</td>
+                                    <td>是</td>
+                                    <td>唐艺昕</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                <tr>
+                                    <td>0008</td>
+                                    <td>赵丽颖</td>
+                                    <td>10K</td>
+                                    <td>15537839578</td>
+                                    <td>是</td>
+                                    <td>赵丽颖</td>
+                                    <td>2017-12-8</td>
+                                    <td><a href="#" style="color: #00a7d0">编辑</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+    </div>
+    <footer class="main-footer" th:include="fragments/index_footer :: index_footer" />
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+<script>
+    $('#table').DataTable({
+        /* "aData": organizationJson,*/
+        'paging': true,
+        'lengthChange': false,
+        'searching': false,
+        'ordering': true,
+        'info': true,
+        'autoWidth': false,
+        'sScrollY' : 370, //DataTables的高
+        'language': {
+            "aria": {
+                "sortAscending": ": activate to sort column ascending",
+                "sortDescending": ": activate to sort column descending"
+            },
+            'paginate': {
+                'first': '首页',
+                'last': '末页',
+                'previous': '前一页',
+                'next': '后一页'
+            }, "emptyTable": "未查询到数据",
+            "info": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+            "infoEmpty": "显示 0 到 0 共 0 条记录",
+            "infoFiltered": "(filtered from _MAX_ total entries)",
+            "infoPostFix": "",
+            "decimal": "",
+            "thousands": ",",
+            "lengthMenu": "每页显示 _MENU_ 条记录",
+            "loadingRecords": "加载中...",
+            "processing": "处理中...",
+            "search": "搜索：",
+            "searchPlaceholder": "",
+            "url": "",
+            "zeroRecords": "对不起，查询不到相关数据"
+        }
+    })
+</script>
+</body>
+</html>

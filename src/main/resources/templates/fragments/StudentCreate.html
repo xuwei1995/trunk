@@ -1,0 +1,117 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="StudentCreate">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>所属机构</span></label>
+                <div class="col-xs-8">
+                    <input data-value="" data-orgname="" name="" class="form-control selectORGDialog" style="background-color: white"
+                           type="text" th:placeholder="请选择" readonly="readonly" maxlength="100" />
+                    <i id="searchStartC" class="iconfont icon-search1"></i>
+                    <!--<i id="clearStartC" class="iconfontdel icon-cancel" style="display: none;" ></i>-->
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>所属学校</span></label>
+                <div class="col-xs-8">
+                    <input data-value="" data-schname="" name="" class="form-control selectSCHDialog" style="background-color: white"
+                           type="text" th:placeholder="请选择" readonly="readonly" maxlength="100" />
+                    <i id="searchSCHC" class="iconfont icon-search1"></i>
+                    <!--<i id="clearSCHC" class="iconfontdel icon-cancel" style="display: none;" ></i>-->
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>学生账号</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>学生姓名</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>手机号码</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>身份证号</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>性别</span></label>
+                <div class="col-xs-8">
+                    <div class="radioAlign">
+                        <input type="radio" checked="checked"/><label>男</label>
+                        <input type="radio" style="margin-left: 50px;"/><label>女</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>出生日期</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control pull-right datepicker" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                </div>
+            </div>
+            <!--<div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>是否可用</span></label>
+                <div class="col-xs-8">
+                    <div class="radioAlign">
+                        <input type="radio" checked="checked"/><label>是</label>
+                        <input type="radio"/><label>否</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>段位</span></label>
+                <div class="col-xs-8">
+                    <select class="form-control" maxlength="100">
+                        <option value="">请选择</option>
+                        <option>一段</option>
+                        <option>二段</option>
+                        <option>三段</option>
+                        <option>四段</option>
+                        <option>五段</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>首次激活日期</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>当前激活日期</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>有效截止期</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <label class="col-xs-3"><span>当前充值卡号</span></label>
+                <div class="col-xs-8">
+                    <input class="form-control" type="text" maxlength="100" />
+                </div>
+            </div>-->
+            <div class="col-xs-6 col-md-6 form-group">
+                <div class="col-xs-11" style="text-align: right"></div>
+            </div>
+            <div class="col-xs-6 col-md-6 form-group">
+                <div class="col-xs-11" style="text-align: right">
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

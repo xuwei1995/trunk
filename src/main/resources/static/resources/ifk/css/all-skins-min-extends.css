@@ -1,0 +1,209 @@
+/*----------------------------------------------------自定义白色主题skin-blue(在蓝色主题的基础上修改的)------------------------------------------------------------------*/
+/*设置主页面左侧菜单背景颜色*/
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #f9fafc;
+}
+/*设置主页面左侧菜单"主菜单"背景颜色及字体颜色*/
+.skin-blue .sidebar-menu>li.header {
+    color: #0f0f0f;
+    background: #f9fafc;
+}
+/*设置主页面左侧菜单中的a标签中的字体颜色*/
+.skin-blue .main-sidebar .sidebar a{
+    color: #0f0f0f;
+}
+/*设置主页面左侧菜单中 class=sidebar-menu 的标签中 li 标签中的字体颜色及字体大小设定*/
+.skin-blue .main-sidebar .sidebar .sidebar-menu li{
+    color: #0f0f0f;
+    font-size: 16px;
+}
+/*设置主页面左侧菜单中 class=sidebar-menu 的标签中 li 标签中 ul 标签中 a 标签中的字体颜色及字体大小设定*/
+.skin-blue .main-sidebar .sidebar .sidebar-menu li ul a{
+    font-size: 15px;
+}
+/*设置主页面左侧菜单中 class=tm 的标签的背景颜色*/
+.skin-blue .main-sidebar .sidebar .sidebar-menu li .tm{
+    background-color: #e5f4f8;
+}
+/*设置主页面左侧菜单中 class=sidebar 的标签中 a 标签中的字体颜色*/
+.skin-blue .sidebar a {
+    color: #0f0f0f;
+}
+/*设置主页面左侧菜单中当鼠标移动到菜单栏中时改变该菜单的字体的颜色及其背景颜色*/
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a, .skin-blue .sidebar-menu>li.menu-open>a {
+    color: #fff;
+    background: #3f85c5;
+}
+/*设置主页面左侧菜单中class=treeview-menu 的标签中的背景颜色颜色及其边距*/
+.skin-blue.sidebar-menu>li>.treeview-menu {
+    margin: 0 1px;
+    background: #e5f4f8;
+}
+/*设置主页面左侧菜单中class=treeview-menu 的标签中 a 标签中的字体颜色*/
+.skin-blue .sidebar-menu .treeview-menu>li>a {
+    color: #62757b;
+}
+/*主页面左侧菜单中当鼠标移动到class=treeview-menu 的标签中时改变该菜单的字体的颜色*/
+.skin-blue .sidebar-menu .treeview-menu>li:hover>a{
+    color: #0f0f0f;
+}
+/*设置页面头部左侧class=logo 的标签的背景颜色、字体颜色及边框*/
+.skin-blue .main-header .logo {
+    background-color: #fff;
+    color: #0f0f0f;
+    border-bottom: 0 solid transparent;
+}
+/*页面头部左侧当鼠标移动到class=logo 的标签上时设置背景颜色*/
+.skin-blue .main-header .logo:hover{
+    background-color: #f9fafc;
+}
+/*设置页面左侧菜单中的用户名称及其所属公司logo样式*/
+.skin-blue .user-panel>.info {
+    padding: 20px 5px 5px 15px;
+    line-height: 1;
+    position: absolute;
+    left: 55px;
+}
+/*设置页面头部左侧class=navbar 的标签的背景颜色*/
+.skin-blue .main-header .navbar {
+    background-color: #fff;
+}
+/*设置页面头部左侧class=sidebar-toggle 的标签中的内容颜色*/
+.skin-blue .main-header .navbar .sidebar-toggle {
+    color: #1d0df9 !important;
+}
+/*设置页面右侧class=content-wrapper 的标签样式*/
+.skin-blue .content-wrapper {
+    min-height: 100%;
+    background-color: #f4f4f4;
+    z-index: 800;
+}
+/*页面头部左侧(头部按钮样式)当鼠标移动到class=btn-app 的标签的设置字体颜色*/
+.skin-blue .main-header .navbar .nav>li>a {
+    color: #3f85c5;
+}
+/*设置页面头部左侧(头部按钮样式)class=nav 的标签中a 标签上时字体颜色及背景颜色*/
+.skin-blue .main-header .navbar .nav>li:hover>a{
+    color: #3f85c5;
+    background-color: #f4f4f4;
+}
+/*设置页面头部左侧(头部按钮样式)class=btn-app 的标签中的样式*/
+.skin-blue .navbar .nav .btn-app {
+    border-radius: 3px;
+    position: relative;
+    padding: 4px 5px;
+    margin: 10px 10px 0px 10px;
+    min-width: 65px;
+    height: 30px;
+    text-align: center;
+    color: #3f85c5;
+    border: 1px solid #ddd;
+    background-color: #e5f4f8;
+    font-size: 16px;
+}
+
+/*----------------------------------------------------AdminLTE框架白色主题skin-black-light(在白色主题的基础上修改)------------------------------------------------------------------*/
+/*设置页面头部左侧(隐藏按钮)class=sidebar-toggle 标签的样式*/
+.skin-black-light .main-header .navbar>.sidebar-toggle {
+    color: #333;
+    border-right: 0px solid #d2d6de;
+}
+/*页面头部左侧(个人信息样式设置)*/
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header {
+    height: 175px;
+    padding: 15px;
+    text-align: center;
+}
+/*页面头部左侧(头部按钮样式)当鼠标移动到class=btn-app 的标签的设置字体颜色*/
+/*.skin-black-light .main-header .navbar .nav>li>a {
+    color: #3f85c5;
+}*/
+/*设置页面头部左侧(头部按钮样式)class=nav 的标签中a 标签上时字体颜色及背景颜色*/
+/*.skin-black-light .main-header .navbar .nav>li:hover>a{
+    color: #3f85c5;
+    background-color: #f4f4f4;
+}*/
+/*设置页面头部左侧(头部按钮样式)class=btn-app 的标签中的样式*/
+.skin-black-light .navbar .nav .btn-app {
+    border-radius: 3px;
+    position: relative;
+    padding: 4px 5px;
+    margin: 10px 10px 0px 10px;
+    min-width: 65px;
+    height: 30px;
+    text-align: center;
+    color: #3f85c5;
+    border: 1px solid #ddd;
+    background-color: #e5f4f8;
+    font-size: 14px;
+}
+/*设置页面头部左侧(头部按钮)class=dropdown-menu 的标签中的样式*/
+/*.skin-black-light .navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
+    position: absolute;
+    right: 10px;
+    left: auto;
+}*/
+/*设置页面头部左侧(头部按钮)class=dropdown-menu 的标签中的样式*/
+/*.skin-black-light .navbar-nav>.notifications-menu>.dropdown-menu, .skin-black-light .navbar-nav>.messages-menu>.dropdown-menu, .skin-black-light .navbar-nav>.tasks-menu>.dropdown-menu {
+    width: 320px;
+    padding: 0 0 0 0;
+    margin: 0;
+    top: 100%;
+}*/
+/*设置页面左侧菜单中的用户名称及其所属公司logo样式*/
+.skin-black-light .user-panel>.info {
+    padding: 15px 5px 5px 15px;
+    line-height: 1;
+    position: absolute;
+    left: 55px;
+}
+/*设置主页面左侧菜单"主菜单"样式*/
+.skin-black-light .sidebar-menu li.header {
+    padding: 10px 25px 10px 15px;
+    font-size: 14px;
+    color: #0f0f0f;
+}
+/*设置主页面左侧菜单中当鼠标移动到菜单栏中时改变该菜单的字体的颜色及其背景颜色*/
+.skin-black-light .sidebar-menu>li:hover>a, .skin-black-light .sidebar-menu>li.active>a, .skin-black-light .sidebar-menu>li.menu-open>a {
+    color: #fff;
+    background: #3f85c5;
+}
+/*设置主页面左侧菜单中 class=tm 的标签的背景颜色*/
+.skin-black-light .main-sidebar .sidebar .sidebar-menu li .tm{
+    background-color: #e5f4f8;
+}
+/*设置主页面右侧内容区域样式*/
+.content-wrapper {
+    min-height: 100%;
+    background-color: #fff;
+    z-index: 800;
+}
+/*学生管理页面---start*/
+.radioAlign input{
+    vertical-align:middle;
+    margin-bottom:3px;
+    *margin-bottom:1px;
+}
+.form-control {
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    border-color: #d2d6de;
+}
+/*设置内容区域class=box的标签样式*/
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+}
+/*设置内容区域class=nav-tabs-custom 的标签样式*/
+.nav-tabs-custom {
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+    border-radius: 3px;
+}
+/*学生管理页面---end*/

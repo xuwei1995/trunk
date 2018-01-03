@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>弈客围棋后台管理</title>
+    <head th:include="fragments/header :: header" />
+    <style type="text/css">
+        .btnmr{
+            margin-right: 20px;
+        }
+        hr {
+            margin-top: 20px;
+            margin-bottom: 0px;
+            border: 0;
+            border-top: 2px solid #eee;
+        }
+        .sf-hr{
+            margin-top: 0px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 2px solid #67bde8;
+        }
+    </style>
+</head>
+<body id="skb" class="hold-transition skin-black-light sidebar-mini">
+<div class="wrapper">
+    <header class="main-header" th:include="fragments/index_top :: index_top" />
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" th:include="fragments/index_left_menu :: index_left_menu" />
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!--<div class="Container" style="width: 100%;">
+            <div class="ToolBar">
+                <div>
+                    <span class="Tools11"></span> <a
+                        style="margin-left: 12px; width: 55px;">GG</a>
+                </div>
+                <div>
+                    <span class="Tools10"></span> <a
+                        style="margin-left: 12px; width: 55px;">FF</a>
+                </div>
+                <div>
+                    <span class="Tools9"></span> <a
+                        style="margin-left: 12px; width: 55px;">DD</a>
+                </div>
+                <div>
+                    <span class="Tools8"></span> <a
+                        style="margin-left: 12px; width: 55px;">SS</a>
+                </div>
+                <div>
+                    <span class="Tools7"></span> <a
+                        style="margin-left: 12px; width: 55px;">AA</a>
+                </div>
+                <div>
+                    <span class="Tools12"></span> <a
+                        style="margin-left: 12px; width: 55px;">ZZ</a>
+                </div>
+                <div>
+                    <span class="Tools13"></span> <a
+                        style="margin-left: 12px; width: 55px;">XX</a>
+                </div>
+            </div>
+            <div class="CTitle">
+                <div class="tags1_left tags1_left_on"></div>
+                <div class="tagsM tagsM_on">学生管理</div>
+                <div class="tags tags3_r_on"></div>
+            </div>
+            <div id="rightContentC" class="Container-1" style="height: 100%; width: 100%">
+
+            </div>
+        </div>-->
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>学生管理<small>新增学生</small></h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
+                <li><a th:href="@{/student}">学生管理</a></li>
+                <li class="active">新增学生</li>
+            </ol>
+        </section>
+        <hr/>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div><!-- class="box"-->
+                        <div class="box-header">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>所属机构</span></label>
+                                    <div class="col-xs-8">
+                                        <!--<select class="form-control" maxlength="100">
+                                            <option value="">请选择</option>
+                                            <option>复华教育</option>
+                                            <option>复旦教育</option>
+                                            <option>心雨教育</option>
+                                            <option>托福教育</option>
+                                            <option>雅思教育</option>
+                                        </select>-->
+                                        <input data-value="" data-orgname="" name="" class="form-control selectORGDialog" style="background-color: white"
+                                               type="text" th:placeholder="请选择" readonly="readonly" maxlength="100" />
+                                        <i id="searchStart" class="iconfont icon-search1"></i>
+                                        <i id="clearStart" class="iconfontdel icon-cancel" style="display: none;" ></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>所属学校</span></label>
+                                    <div class="col-xs-8">
+                                        <!--<select class="form-control" maxlength="100">
+                                            <option value="">请选择</option>
+                                            <option>学校一号</option>
+                                            <option>学校二号</option>
+                                            <option>学校三号</option>
+                                            <option>学校四号</option>
+                                            <option>学校五号</option>
+                                        </select>-->
+                                        <input data-value="" data-schname="" name="" class="form-control selectSCHDialog" style="background-color: white"
+                                               type="text" th:placeholder="请选择" readonly="readonly" maxlength="100" />
+                                        <i id="searchSCH" class="iconfont icon-search1"></i>
+                                        <i id="clearSCH" class="iconfontdel icon-cancel" style="display: none;" ></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>学生账号</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>学生姓名</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>手机号码</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>身份证号</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>性别</span></label>
+                                    <div class="col-xs-8">
+                                        <div class="radioAlign">
+                                            <input type="radio" checked="checked"/><label>男</label>
+                                            <input type="radio"/><label>女</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>出生日期</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control pull-right datepicker" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                                    </div>
+                                </div>
+                                <!--<div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>是否可用</span></label>
+                                    <div class="col-xs-8">
+                                        <div class="radioAlign">
+                                            <input type="radio" checked="checked"/><label>是</label>
+                                            <input type="radio"/><label>否</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>段位</span></label>
+                                    <div class="col-xs-8">
+                                        <select class="form-control" maxlength="100">
+                                            <option value="">请选择</option>
+                                            <option>一段</option>
+                                            <option>二段</option>
+                                            <option>三段</option>
+                                            <option>四段</option>
+                                            <option>五段</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>首次激活日期</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>当前激活日期</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>有效截止期</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" placeholder="yyyy-MM-dd" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <label class="col-xs-3"><span>当前充值卡号</span></label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" type="text" maxlength="100" />
+                                    </div>
+                                </div>-->
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <div class="col-xs-11" style="text-align: right"></div>
+                                </div>
+                                <div class="col-xs-6 col-md-6 form-group">
+                                    <div class="col-xs-11" style="text-align: right">
+                                        <button type="button" class="btn btn-primary">新增</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </section>
+    </div>
+    <footer class="main-footer" th:include="fragments/index_footer :: index_footer" />
+    <div class="control-sidebar-bg"></div>
+</div>
+<script>
+    $(function () {
+        //Date picker
+        $('.datepicker').datepicker({
+            autoclose: true
+        });
+    });
+</script>
+</body>
+</html>

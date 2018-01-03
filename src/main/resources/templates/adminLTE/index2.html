@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>弈客围棋后台管理</title>
+    <head th:include="fragments/header :: header"/>
+</head>
+<body id="skb1" class="hold-transition skin-black-light sidebar-mini">
+<div class="wrapper">
+    <header class="main-header" th:include="fragments/index_top :: index_top"/>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" th:include="fragments/index_left_menu :: index_left_menu"/>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <iframe id="right_content_iframe" th:src="@{/student}" scrolling="no" width="100%" frameborder="0">
+        </iframe>
+    </div>
+
+    <footer class="main-footer" th:include="fragments/index_footer :: index_footer"/>
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+<script type="text/javascript">
+
+    function setIframeUrl(dom, url) {
+        var $dom = $(dom);
+        $dom.parent().find('li.active').removeClass('active');
+        $dom.addClass('active');
+
+        if (url == '') {
+            url = "/index2";
+        }
+        $("#right_content_iframe").contents().empty();
+        $("#right_content_iframe").attr("src", ctx + url);
+    }
+
+    function refreshIframeHeight() {
+        var mainheight = $("#right_content_iframe").contents().find("body").height() + 30;
+        if (mainheight < 700) {
+            mainheight = 700;
+        }
+        $("#right_content_iframe").height(mainheight);
+    }
+
+    // $.widget.bridge('uibutton', $.ui.button);
+    jQuery(function ($) {
+        // iframe 自适应高度 http://www.mohurd.gov.cn/wjfb/201704/t20170406_231387.html
+        $("#right_content_iframe").on('load', refreshIframeHeight);
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+</body>
+</html>

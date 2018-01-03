@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>弈客围棋</title>
+    <head th:include="fragments/header :: header" />
+</head>
+<style type="text/css">
+    body {
+        padding: 0px;
+        margin: 0px auto;
+        width: 1240px;
+        height: 700px;
+        font-family: 'Microsoft YaHei';
+        font-size: 12px;
+        color: #333333;
+    }
+
+    .box {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FEFEFE', endColorstr='#FEFEFE'); /*  IE */
+        background-image: linear-gradient(bottom, #FEFEFE 0%, #FEFEFE 100%);
+        background-image: -o-linear-gradient(bottom, #FEFEFE 0%, #FEFEFE 100%);
+        background-image: -moz-linear-gradient(bottom, #FEFEFE 0%, #FEFEFE 100%);
+        background-image: -webkit-linear-gradient(bottom, #FEFEFE 0%, #FEFEFE 100%);
+        background-image: -ms-linear-gradient(bottom, #FEFEFE 0%, #FEFEFE 100%);
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .left-div{
+        float: left;
+        height: 100%;
+        width: 35%;
+        text-align: right;
+    }
+    .limgD{
+        width: 315px;
+        height: 362px;
+    }
+    .center-div{
+        float: left;
+        height: 100%;
+        width: 50%;
+        text-align: center;
+    }
+    .cd-top{
+        margin-top: 8%;
+        width: 100%;
+        text-align: center;
+    }
+    .cimgD{
+        width: 585px;
+        height: 336px;
+    }
+    .cd-center {
+        width: 100%;
+        text-align: center;
+    }
+    .cd-bottom{
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 45px;
+    }
+    .spYP{
+        font-size: 20px;
+        color: #03192b;
+    }
+    .labl-w{
+        width: 90px;
+        text-align: left;
+    }
+    .labl-mt{
+        margin-top: 7px;
+        width:80px;
+    }
+    .input-w{
+        width: 218px;
+        font-size: 12px;
+        background-color: rgba(218,237,255,0.5);
+    }
+    .right-div{
+        float: left;
+        height: 100%;
+        width: 15%;
+        text-align: right;
+    }
+    .rd-div{
+        border: 1px solid #3f85c5;
+        text-align: center;
+        height:30px;
+        width:100px;
+        margin-top: 15px;
+        float: right;
+        background-color: rgba(218,237,255,0.5);
+    }
+    .rd-lab{
+        font-size: 14px;
+        color: #3f85c5;
+        margin-top: 4px;
+    }
+</style>
+<script type="text/javascript">
+    if (window != top){
+        top.location.href = location.href;
+    }
+</script>
+<body>
+<div class="box">
+    <div id="leftD" class="left-div">
+        <div clsss="limgD" style="margin-top: 30%;">
+            <img clsss="limgD" th:src="@{/resources/ifk/img/01.png}"/>
+        </div>
+    </div>
+    <div id="centerD" class="center-div">
+        <form action="" method="post">
+            <div class="cd-top">
+                <img clsss="climgD" th:src="@{/resources/ifk/img/02.png}"/>
+            </div>
+            <div class="cd-bottom">
+                <div class="form-group col-xs-12  col-xs-offset-1">
+                    <label class="col-xs-2 control-label labl-w"><span class="spYP">通行证</span></label>
+                    <div class="col-xs-5">
+                        <input type="text" id="user_code" class="form-control input-w" placeholder="手机号/会员号" />
+                    </div>
+                    <label class="col-xs-2 control-label labl-mt"><span style="font-size: 12px;color: #db4642">注册账号</span></label>
+                </div>
+                <div class="form-group col-xs-12  col-xs-offset-1" style="margin-top: 10px;">
+                    <label class="col-xs-2 control-label labl-w"><span class="spYP">密码</span></label>
+                    <div class="col-xs-5">
+                        <input type="password" id="password" class="form-control input-w" placeholder="请输入密码" />
+                    </div>
+                    <label class="col-xs-2 control-label labl-mt"><span style="font-size: 12px;color: #dd7833">找回密码</span></label>
+                </div>
+                <!--<div class="form-group form-actions">-->
+                <div class="form-group col-xs-12  col-xs-offset-1" style="text-align: center">
+                    <label class="col-xs-2 control-label labl-w"></label>
+                    <div class="col-xs-5" >
+                        <div class="radioAlign">
+                            <input type="checkbox" id="checkActive"/><label for="checkActive" style="font-size: 12px;color: #808080">记住账号</label>
+                        </div>
+                    </div>
+                    <label class="col-xs-2 control-label"></label>
+                </div>
+                <div class="form-group col-xs-12  col-xs-offset-1">
+                    <label class="col-xs-2 control-label labl-w"></label>
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-sm btn-primary" style="height:42px;width:220px">登录</button>
+                    </div>
+                    <label class="col-xs-2 control-label"></label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="rightD" class="right-div">
+        <div id="schoolLink" class="rd-div">
+            <label class="rd-lab"><a th:href="@{/index2.html}">学校管理</a></label>
+        </div>
+    </div>
+</div>
+<form th:action="@{/index}" id="schoolLinkForm" method="post"></form>
+<script  type="text/javascript">
+    /**进入学校管理页面**/
+    /*$("#schoolLink").on('click', function() {
+        $("#schoolLinkForm").submit();
+    });*/
+</script>
+</body>
+</html>

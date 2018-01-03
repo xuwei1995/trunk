@@ -1,0 +1,54 @@
+<div th:fragment="selectSCHDialog" tabindex="-1" role="dialog" aria-hidden="false"  >
+    <div class="modal-dialog" style="width:700px;">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close dialog-close" data-dismiss="modal"
+                        aria-hidden="true">&times;</button>
+                <h4 class="modal-title">请选学校</h4>
+            </div>
+            <div class="modal-body" style="padding-bottom: 0px;">
+                <div class="row">
+                    <div class="form-group col-xs-12 col-md-12">
+                        <label class="col-xs-3 control-label"><span>机构名称</span></label>
+                        <div class="col-xs-6">
+                            <input name="orgAbbrNameSCH" class="form-control orgAbbrNameSCH" readonly="readonly" type="text" maxlength="100"  />
+                        </div>
+                        <div class="col-xs-3 pull-right">
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                        <label class="col-xs-3 control-label"><span>学校名称</span></label>
+                        <div class="col-xs-6">
+                            <form class="searchSCHForm" onsubmit="return false;">
+                                <input name="schoolName" class="form-control schoolNameSCH" type="text" maxlength="100"  />
+                                <input name="orgId" class="orgIdSCH" type="hidden"/>
+                            </form>
+                        </div>
+                        <div class="col-xs-3 pull-right">
+                            <button type="submit" onclick="searchSCHData()" class="btn btn-primary">查询</button>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-12">
+                        <div class="col-xs-12">
+                            <!--<div id="dg_sch" style="height: 300px; margin-bottom:-20px; "></div>-->
+                            <table id="dg_sch" class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>学校名称</th>
+                                    <th>学校联系人</th>
+                                    <th>学校地址</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: -20px;">
+                <button type="button" class="btn  btn-danger" data-dismiss="modal">取消</button>
+                <button type="submit" id="" onclick="resultSCHForInput()" class="btn btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
